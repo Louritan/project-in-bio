@@ -9,7 +9,7 @@ export type ProfileData = {
 
 export async function getProfileData(profileId: string) {
   const snapshot = await db.collection("profiles").doc(profileId).get();
-  return snapshot.data() as ProfileData;
+  return snapshot.data() as ProfileData | null;
 }
 
 export type ProjectData = {
